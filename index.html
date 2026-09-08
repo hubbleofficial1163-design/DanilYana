@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Приглашение на свадьбу</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Marck+Script&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Главное фото с лепестками (02.jpg) -->
+    <div class="main-photo">
+        <div class="overlay">
+            <div class="invitation-text">
+                <h1 class="names">Данил <span class="ampersand">&</span> Яна</h1>
+                <div class="date-location">
+                    <p class="date"><i class="far fa-calendar"></i> 17 Октября 2026 года</p>
+                    <!-- <p class="location"><i class="fas fa-map-marker-alt"></i> Усадьба "Белая лилия"</p> -->
+                </div>
+                <div class="quote">
+                    <p>Приглашаем разделить с нами<br>радость самого важного дня</p>
+                </div>
+                <div class="scroll-indicator">
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент с РАСТВОРЕНИЕМ фото -->
+    <div class="content-wrapper">
+        <!-- Текст приглашения (03.jpg растворяется в 02.jpg) -->
+        <section class="invitation-message section-bg" 
+                 style="--bg-image: url('06.jpg'); --prev-bg-image: url('02.jpg');">
+            <div class="message-content">
+                <h2><i class="fas fa-envelope-open-text"></i> Дорогие друзья и родные!</h2>
+                <div class="message-text">
+                    <p>Мы рады пригласить вас на нашу свадьбу!</p>
+                    <p>Этот день мы мечтали разделить именно с вами — нашими самыми близкими и дорогими людьми. Ваше присутствие сделает наш праздник по-настоящему светлым и счастливым.</p>
+                    <p>Ждём вас, чтобы вместе отпраздновать начало нашего семейного пути.</p>
+                    <div class="signature">
+                        <p>С любовью,</p>
+                        <p class="signature-names">Данил и Яна</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Детали мероприятия (04.jpg растворяется в 03.jpg) -->
+        <section class="details section-bg" 
+                 style="--bg-image: url('04.jpg'); --prev-bg-image: url('06.jpg');">
+            <div class="timeline">
+                <h2><i class="far fa-clock"></i> Расписание дня</h2>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">15:00</div>
+                    <div class="timeline-content">
+                        <h3>Сбор гостей</h3>
+                        <p>Встреча гостей у ЗАГСа</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-time">18:00</div>
+                    <div class="timeline-content">
+                        <h3>Банкет</h3>
+                        <p>Праздничный ужин, тосты и поздравления</p>
+                    </div>
+                </div>
+                
+
+            </div>
+        </section>
+
+        <!-- Дресс-код (05.jpg растворяется в 04.jpg) -->
+<!-- Дресс-код (05.jpg растворяется в 04.jpg) -->
+<section class="dress-code section-bg" 
+         style="--bg-image: url('06.jpg'); --prev-bg-image: url('04.jpg');">
+    <div class="dress-content">
+        <h2><i class="fas fa-user-tie"></i> Дресс-код</h2>
+        <p class="dress-intro">На нашей свадьбе не будет строгого дресс-кода, нам главное, что бы Вы были рядом и что бы Вам было комфортно</p>
+        
+        <!-- Блок пожеланий -->
+        <div class="wishes-block">
+            <h3><i class="fas fa-gift"></i> Пожелания</h3>
+            <div class="wishes-grid">
+                <div class="wish-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>Лучшие подарки — это подарки в конвертах. Ваше внимание и тёплые слова будут лучшим дополнением!</p>
+                </div>
+                <div class="wish-item">
+                    <i class="fas fa-child"></i>
+                    <p>Наша свадьба пройдёт без детей. Пожалуйста, отнеситесь с пониманием.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Форма подтверждения (06.jpg растворяется в 05.jpg) -->
+        <section class="rsvp section-bg" 
+                 style="--bg-image: url('04.jpg'); --prev-bg-image: url('06.jpg');">
+            <div class="rsvp-content">
+                <h2><i class="far fa-check-circle"></i> Подтвердите, пожалуйста</h2>
+                <p class="rsvp-intro">Будем очень рады, если вы сможете разделить с нами этот день</p>
+                
+                <form id="rsvpForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Ваше имя" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="attendance" required>
+                                <option value="" disabled selected>Присутствие</option>
+                                <option value="yes">С радостью буду</option>
+                                <option value="plusone">Буду с парой</option>
+                                <option value="family">Придём семьёй</option>
+                                <option value="no">К сожалению, не смогу</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <textarea id="message" placeholder="Ваши пожелания или особые предпочтения..." rows="3"></textarea>
+                    </div>
+                    
+                    <div class="form-note">
+                        <p><i class="fas fa-info-circle"></i> Пожалуйста, ответьте до 15 сентября 2026 года</p>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="far fa-paper-plane"></i> Отправить ответ
+                    </button>
+                </form>
+                
+                <div id="formMessage" class="form-message"></div>
+            </div>
+        </section>
+
+<section class="contacts section-bg" 
+         style="--bg-image: url('06.jpg'); --prev-bg-image: url('04.jpg');">
+    <div class="contacts-content">
+         <h2><i class="fas fa-info-circle"></i> Детали</h2>
+        <!-- <p class="contacts-intro">Присоединяйтесь к нашему чату для гостей</p> -->
+        
+        <div class="contact-cards">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="contact-info">
+                    <h3>Чат для гостей</h3>
+                    <p>Все важные объявления и общение</p>
+                    <a href="https://max.ru/join/lXGFRFhXM-evJIEXdyoabRno3BdJXLmYyOvO8c3WV6w" class="chat-link" target="_blank">
+                        <i class="fas fa-paper-plane"></i> Перейти в чат
+                    </a>
+                </div>
+            </div>
+            
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
+                <div class="contact-info">
+                    <h3>Место проведения</h3>
+                    <p>Ресторан "Olive"</p>
+                    <p class="address">г. Пятигорск ул. Бунимовича 17 Б</p>
+                    <a href="https://yandex.ru/maps/-/CTdXIC17" class="map-link" target="_blank">
+                        <i class="fas fa-map-pin"></i> Показать на карте
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Футер -->
+        <footer>
+            <div class="footer-content">
+                <p class="footer-quote">"Любовь — это когда две половинки находят друг друга и становятся одним целым"</p>
+                <div class="footer-names">
+                    <div class="name">Данил</div>
+                    <div class="heart"><i class="fas fa-heart"></i></div>
+                    <div class="name">Яна</div>
+                </div>
+                <p class="wedding-date">17 октября 2026 года</p>
+            </div>
+            
+            <div class="floral-border"></div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
