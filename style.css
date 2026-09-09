@@ -974,3 +974,90 @@ footer {
 .quote {
     margin: 1.5rem 0;
 }
+
+
+/* ========== УБИРАЕМ СИНЕЕ ВЫДЕЛЕНИЕ НА МОБИЛЬНЫХ ========== */
+
+/* 1. Убираем стандартный синий фон при нажатии на элементы */
+* {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* 2. Убираем outline у кнопок и ссылок при фокусе/активном состоянии */
+button,
+input,
+select,
+textarea,
+a,
+.submit-btn,
+.chat-link,
+.map-link,
+.scroll-indicator {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* 3. Для кнопок - убираем синюю обводку при нажатии */
+button:focus,
+button:active,
+input:focus,
+input:active,
+select:focus,
+select:active,
+textarea:focus,
+textarea:active,
+.submit-btn:focus,
+.submit-btn:active {
+    outline: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* 4. Для ссылок - убираем синий фон при нажатии */
+a:active,
+a:focus,
+.chat-link:active,
+.chat-link:focus,
+.map-link:active,
+.map-link:focus {
+    outline: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+/* 5. Для интерактивных элементов с transition - убираем свечение */
+button:hover,
+button:focus,
+button:active,
+.submit-btn:hover,
+.submit-btn:focus,
+.submit-btn:active {
+    box-shadow: none !important;
+}
+
+/* 6. Убираем синюю подсветку у select на iOS */
+select {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/* 7. Убираем синее выделение у текста при нажатии */
+.no-select {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* 8. Для всех интерактивных элементов на мобильных */
+@media (hover: none) and (pointer: coarse) {
+    * {
+        -webkit-tap-highlight-color: transparent !important;
+    }
+    
+    button:active,
+    .submit-btn:active,
+    .chat-link:active,
+    .map-link:active,
+    .scroll-indicator:active {
+        opacity: 0.85;
+        transition: opacity 0.15s ease;
+    }
+}
